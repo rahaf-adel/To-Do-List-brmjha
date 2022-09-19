@@ -81,9 +81,6 @@ function createTask (arrayOfTasks){
         const divButtons = document.createElement('div')
         divButtons.setAttribute('data-id', task.id)
         divButtons.innerHTML += `
-                 <button  class="edit  mx-2 text-purple-700 hover:text-white hover:bg-purple-600 p-1 px-2 rounded">
-                   <i class="edit pointer-events-none fa fa-reqular fa-pen" ></i>
-                 </button>
 
                   <button class="delete  text-purple-700 hover:text-white hover:bg-purple-600 p-1 px-2 rounded">
                    <i class="delete pointer-events-none fa fa-regular fa-trash" ></i>
@@ -120,18 +117,8 @@ addToLocalStorage(arrayOfTasks)
 }
 
 function editItem (id){
-    const span = taskList.getElementsByClassName('text')
-    arrayOfTasks.forEach((task)=> {
-        if (task.id == id){
-            console.log("editable")
-
-            // test
-            taskInput.value =  "i need the task to jump here  "
-            console.log(span.value)
-        
-        }
-    })
-
+    // const span = taskList.getElementsByClassName('text')
+  
 }
 
 
@@ -149,13 +136,7 @@ taskList.addEventListener('click', function (e){
         deleteTodo(e.target.parentElement.getAttribute('data-id'))
 
     }
-    if (e.target.classList.contains('edit')){
-        console.log("edit clicked")
-        editItem(e.target.parentElement.getAttribute('data-id'))
-
-    }
  
-
 })
 
 // toggle the value to completed and not completed
